@@ -18,7 +18,7 @@ token:any;
   }
 
   getUser(){
-    this.loginService.getUser(this.token).subscribe(
+    this.loginService.getUser().subscribe(
       (response:any)=>{
        console.log(response);
        //this.loginService.loginUser(response.token);

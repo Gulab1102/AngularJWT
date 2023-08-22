@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms'
 import {MatInputModule} from '@angular/material/input';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { AuthIntercepterService } from './services/auth-intercepter.service';
 
 
 
@@ -40,7 +41,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
     MatInputModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthIntercepterService, multi: true }],
   bootstrap: [AppComponent]
 
 })
