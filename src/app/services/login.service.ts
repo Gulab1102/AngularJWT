@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url='http://localhost:8080';
+  url='https://jwtauthentication-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 
   generateToken(credentials:any){
     debugger
-    return this.http.post('http://localhost:8080/auth/login',credentials);
+    return this.http.post(this.url+'/auth/login',credentials);
 
   }
 
