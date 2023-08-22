@@ -6,12 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url='https://jwtauthentication-production.up.railway.app';
+  url='http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
   generateToken(credentials:any){
-    debugger
     return this.http.post(this.url+'/auth/login',credentials);
 
   }
@@ -40,9 +39,18 @@ getToken(){
 
 
 getUser(){
-  debugger
   return this.http.get(this.url+'/auth/test');
 
+}
+
+doSignUp(credentials:any){
+
+  const headers = { 'content-type': 'application/json',
+  'Access-Control-Allow-Origin': '*'
+}  
+    const body=JSON.stringify(credentials);
+    console.log(body)
+    return this.http.post(this.url+'/auth/register',credentials,{'headers':headers});
 }
 
 }

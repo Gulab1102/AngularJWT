@@ -22,6 +22,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AuthIntercepterService } from './services/auth-intercepter.service';
 import { LoginService } from './services/login.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -31,7 +32,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     NavBarComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
