@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AuthIntercepterService } from './services/auth-intercepter.service';
+import { LoginService } from './services/login.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 
@@ -41,7 +43,7 @@ import { AuthIntercepterService } from './services/auth-intercepter.service';
     MatInputModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthIntercepterService, multi: true }],
+  providers: [LoginService,AuthGuardService,{ provide: HTTP_INTERCEPTORS, useClass: AuthIntercepterService, multi: true }],
   bootstrap: [AppComponent]
 
 })

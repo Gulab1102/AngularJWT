@@ -11,18 +11,18 @@ export class DashboardComponent implements OnInit {
 
 token:any;
   constructor(private loginService:LoginService){
-    this.token=localStorage.getItem('token');
+    
   }
   ngOnInit(): void {
-    
+   
   }
 
   getUser(){
     this.loginService.getUser().subscribe(
       (response:any)=>{
        console.log(response);
-       //this.loginService.loginUser(response.token);
-     //  window.location.href="/dashboard";
+      // this.loginService.loginUser(response.token);
+      
       },
       error=>{
         console.log(error+" Hello ");
