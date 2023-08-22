@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url='http://localhost:8080';
+  url='https://jwtauthentication-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 
@@ -44,13 +44,7 @@ getUser(){
 }
 
 doSignUp(credentials:any){
-
-  const headers = { 'content-type': 'application/json',
-  'Access-Control-Allow-Origin': '*'
-}  
-    const body=JSON.stringify(credentials);
-    console.log(body)
-    return this.http.post(this.url+'/auth/register',credentials,{'headers':headers});
+    return this.http.post(this.url+'/auth/register',credentials);
 }
 
 }
