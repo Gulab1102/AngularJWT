@@ -12,7 +12,7 @@ export class LoginService {
 
   generateToken(credentials:any){
     debugger
-    return this.http.post('http://localhost:8080/auth/login',credentials);
+    return this.http.post('https://jwtauthentication-production.up.railway.app/auth/login',credentials);
 
   }
 
