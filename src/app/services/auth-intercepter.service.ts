@@ -13,6 +13,8 @@ export class AuthIntercepterService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     
    const localtoken=localStorage.getItem('token');
+  
+   if(localtoken!=null)
    req=req.clone({headers:req.headers.set('Authorization','Bearer '+localtoken)});
    return next.handle(req);
   }

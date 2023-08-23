@@ -9,25 +9,18 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-token:any;
+user:any='';
+
+name="Gulab"
   constructor(private loginService:LoginService){
     
   }
   ngOnInit(): void {
-   
+   //this.user='';
   }
 
   getUser(){
-    this.loginService.getUser().subscribe(
-      (response:any)=>{
-       console.log(response);
-      // this.loginService.loginUser(response.token);
-      
-      },
-      error=>{
-        console.log(error+" Hello ");
-      }
-    )
+    this.user=localStorage.getItem('username');
   }
 
 }

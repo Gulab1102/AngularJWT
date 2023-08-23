@@ -27,12 +27,12 @@ export class LoginComponent  implements OnInit{
 
       this.loginService.generateToken(this.credentials).subscribe(
         (response:any)=>{
-         console.log(response.token);
-         this.loginService.loginUser(response.token);
+         console.log(response);
+         this.loginService.loginUser(response.token,response.username);
           window.location.href="/dashboard";
         },
         error=>{
-          console.log(error);
+          console.log(error.response.text);
         }
       )
       

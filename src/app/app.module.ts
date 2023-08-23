@@ -25,6 +25,12 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { SignupComponent } from './components/signup/signup.component';
 
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import {ToastrModule} from 'ngx-toastr'
+
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +49,11 @@ import { SignupComponent } from './components/signup/signup.component';
     MatToolbarModule,MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    ToastrModule.forRoot({
+  positionClass: "toast-top-right"
+    })
   ],
   providers: [LoginService,AuthGuardService,{ provide: HTTP_INTERCEPTORS, useClass: AuthIntercepterService, multi: true }],
   bootstrap: [AppComponent]

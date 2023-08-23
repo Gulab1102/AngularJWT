@@ -5,4 +5,9 @@
         <button mat-raised-button (click)="getUser()">Get Details</button>
       
     </div>
+
+    <div *ngIf="user" class="container mu text-center">
+       <h1> Welcome {{name}} Your username is {{user}}</h1>
+
+    </div>
 </div>

@@ -6,7 +6,7 @@
               <img width="150PX" class="img-fluid" src="/assets/temp.jpg" alt="">
             </div>
          <h1>Signup here !!</h1>
-         <form (ngSubmit)="onSubmit()">
+         <form #myForm="ngForm" (ngSubmit)="onSubmit()">
             <mat-form-field class="fill">
                 <mat-label>Name</mat-label>
                 <input required
@@ -29,7 +29,7 @@
               name="password"
               [(ngModel)]="credentials.password"
               type="password" matInput >
-              </mat-form-field>
+              </mat-form-field> 
 
               <mat-form-field class="fill">
                 <mat-label>Addrress</mat-label>

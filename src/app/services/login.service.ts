@@ -6,7 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url='https://jwtauthentication-production.up.railway.app';
+ // username='';
+
+  url='http://localhost:8080';
+
+  //url='https://jwtauthentication-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +19,9 @@ export class LoginService {
 
   }
 
-  loginUser(token:any){
+  loginUser(token:any,username:any){
+  //  this.username=username;
+  localStorage.setItem('username',username);
     localStorage.setItem("token",token);
   }
 
@@ -39,7 +45,7 @@ getToken(){
 
 
 getUser(){
-  return this.http.get(this.url+'/auth/test');
+  return this.http.post(this.url+'/auth/test','');
 
 }
 
