@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <span>
-        <button mat-raised-button color="primary" routerLink="/signup">Signup</button>
+        <a *ngIf="!isloggedin" mat-raised-button color="primary" routerLink="/signup">Signup</a>
     </span>
     <span class="example-spacer"></span>
     <span>

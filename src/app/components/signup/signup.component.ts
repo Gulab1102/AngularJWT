@@ -34,7 +34,7 @@ this.loginService.doSignUp(this.credentials).subscribe(
   //  window.location.href="/dashboard";
   //this.router.navigate(['login']);
   if(response.myresponse==='Registered successfully !!'){
-    this.notificationService.showsuccess();
+    this.notificationService.showsuccess('Registered successfully !!');
     this.router.navigate(['login']);
   }
   else this.notificationService.showerror(response.myresponse);

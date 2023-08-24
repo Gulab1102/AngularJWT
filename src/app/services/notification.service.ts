@@ -10,8 +10,8 @@ export class NotificationService {
 
   constructor(private toastr: ToastrService) { }
 
-  showsuccess(){
-    this.toastr.success("Added succussfully")
+  showsuccess(msg:string){
+    this.toastr.success(msg);
   }
 
   showerror(msg:string){
