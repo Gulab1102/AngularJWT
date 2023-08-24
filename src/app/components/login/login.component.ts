@@ -35,7 +35,7 @@ export class LoginComponent  implements OnInit{
          console.log(response);
          this.loginService.loginUser(response.token,response.username);
          this.notificationService.showsuccess('login successfull');
-        window.location.href="/dashboard";
+      //  window.location.href="/dashboard";
        this.router.navigate(['/dashboard']);
         },
         error=>{
